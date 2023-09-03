@@ -5,8 +5,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration
-@EntityScan(basePackages = "com.ccee.desafiocceebackend.entity") // Substitua pelo pacote correto de suas entidades
-@EnableJpaRepositories(basePackages = "com.ccee.desafiocceebackend.repository") // Substitua pelo pacote correto de seus repositórios
+@EntityScan(basePackages = "com.ccee.desafiocceebackend.entity") 
+@EnableJpaRepositories(basePackages = "com.ccee.desafiocceebackend.repository") 
 public class JpaConfiguration {
-    // Sua configuração adicional, se houver
+	
 }
