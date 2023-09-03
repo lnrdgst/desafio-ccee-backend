@@ -17,6 +17,15 @@ public class Arquivo {
     private String codigoAgente;
     private String data;
     private String regiao;
+    
+    
+    
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	public String getCodigoAgente() {
 		return codigoAgente;
 	}

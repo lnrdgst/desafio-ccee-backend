@@ -36,17 +36,19 @@ public class ArquivoRest {
 			return "Falha no envio do arquivo.";
 		}
 		try {
+
 			List<Arquivo> arquivos = new ArrayList<>();
 
 			String arquivoXml = new String(file.getBytes(), StandardCharsets.UTF_8);
-
 			arquivoXml = arquivoService.removerDadosConfidenciais(arquivoXml);
 
+			
 			List<String> codigosAgente = arquivoService.extrairCodigosAgente(arquivoXml);
 			codigosAgente.stream().forEach(codigoAgente -> {
 				System.out.println("Código do Agente: " + codigoAgente);
 			});
-
+			
+			
 			List<String> datas = arquivoService.extrairDatasAgente(arquivoXml);
 			List<String> regioes = arquivoService.extrairRegioesAgente(arquivoXml);
 
@@ -73,7 +75,7 @@ public class ArquivoRest {
 
 	@GetMapping("/consolidado")
 	public Map<String, List<Arquivo>> getDadosPorRegiao() {
-
+		
 		List<Arquivo> dados = new ArrayList<>();
 		try {
 			dados = arquivoService.buscarTodos();
